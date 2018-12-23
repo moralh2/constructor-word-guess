@@ -19,6 +19,19 @@ function Word(originalWord) {
     this.print = function() {
         console.log(this.letters.join(' '))
     }
+    this.guess = function() {
+        var allGuessed = true
+        // assume all have been guessed, to turn false if at least one is not
+        for(var i = 0; i < this.letters.length; i++) {
+            var currentLetter = this.letters[i]
+            if (!currentLetter.guessed) {
+                allGuessed = false
+                // turn false if at least one is still not guessed
+            }
+        }
+        // if all have been guessed, return guess is true, false otherwise
+        return allGuessed
+    }
 }
 
 module.exports = Word
