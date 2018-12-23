@@ -2,7 +2,8 @@
 
 ## Overview
 This assignment used Node.js and JS Constructors to create a CLI version of the Word-Guess Game, where the user tries to guess the title of a series from Netflix.
-The `inquirer` Node.js package was leveraged here to get input from the user. Also, code from the first version of this assignmnet (`https://github.com/moralh2/Word-Guess-Game`) was re-used to create some of the game logic.
+Using the `inquirer` Node.js package, input from the user is obtained from the command line; and using methods that belong to the `Word` and `Letter` Constructors, validating the user's guess was pretty straightforward. 
+Also, code from the first version of this assignmnet (`https://github.com/moralh2/Word-Guess-Game`) was re-used to create some of the game logic by creating a `game` object.
 
 ## Node Packages
 This app uses two Node.js packages:
