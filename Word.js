@@ -12,12 +12,17 @@ function Word(originalWord) {
     }
     this.check = function(guessLetter) {
         var guessedCorrectly = false
-        var playerGuess = chalk.bold(guessLetter.toUpperCase())
-        var message = ''
+
+        // check if any letters have been guessed (update Letter, returns true)
         for(var i = 0; i < this.letters.length; i++) {
             var currentLetter = this.letters[i]
             guessedCorrectly = currentLetter.check(guessLetter)
         }
+
+        // variables for priting the outcome of this guess
+        var playerGuess = chalk.bold(guessLetter.toUpperCase())
+        var message = ''
+        // print the outcome based on if guessedCorrectly was true 
         if(guessedCorrectly) {
             message = chalk.green("You entered: " + playerGuess + " ---- You guessed correctly!")
         }
@@ -25,6 +30,8 @@ function Word(originalWord) {
             message = chalk.red("You entered: " + playerGuess + " ---- That was not correct!")
         }
         console.log(message)
+
+        // print masked word
         this.print()
     }
     this.print = function() {
@@ -36,8 +43,8 @@ function Word(originalWord) {
         for(var i = 0; i < this.letters.length; i++) {
             var currentLetter = this.letters[i]
             if (!currentLetter.guessed) {
-                allGuessed = false
                 // turn false if at least one is still not guessed
+                allGuessed = false
             }
         }
         // if all have been guessed, return guess is true, false otherwise
