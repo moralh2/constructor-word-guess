@@ -14,17 +14,4 @@ function Letter(character, guessed = false) {
     }
 }
 
-var a = new Letter('b')
-var b = new Letter('c')
-var c = new Letter('d')
-var array = [a,b,c]
-
-console.log(array.join(' '))
-
-b.check('b')
-
-console.log(array.join(' '))
-
-b.check('c')
-
-console.log(array.join(' '))
+module.exports = Letter
