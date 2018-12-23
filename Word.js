@@ -1,36 +1,35 @@
 var Letter = require("./Letter")
 
-function Word(array) {
-    this.letters = array
+function Word(originalWord) {
+    this.originalWord = originalWord
+    this.letters = []
+    this.createLetters = function() {
+        var arrayString = this.originalWord.split('')
+        for(var i = 0; i < arrayString.length; i++) {
+            this.letters.push( new Letter(arrayString[i]) )
+        }
+    }
     this.check = function(guessLetter) {
-        for(i = 0; i < this.letters.length; i++) {
+        for(var i = 0; i < this.letters.length; i++) {
             var currentLetter = this.letters[i]
             currentLetter.check(guessLetter)
         }
+        this.print()
     }
     this.print = function() {
         console.log(this.letters.join(' '))
     }
 }
 
-var a = new Letter('b')
-var b = new Letter('c')
-var c = new Letter('d')
-var array = [a,b,c]
 
-// console.log(array.join(' '))
-
-// b.check('b')
-
-// console.log(array.join(' '))
-
-// b.check('c')
-
-// console.log(array.join(' '))
-
-var palabra = new Word(array)
-
+var palabra = new Word('Josefina')
+palabra.createLetters()
+palabra.print()
 palabra.check('a')
-palabra.print()
-palabra.check('c')
-palabra.print()
+// palabra.print()
+
+
+
+palabra.check('x')
+palabra.check('a')
+palabra.check('j')

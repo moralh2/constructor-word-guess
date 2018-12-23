@@ -8,7 +8,7 @@ function Letter(character, guessed = false) {
         return '_'
     }
     this.check = function(playerInput) {
-        if (playerInput === this.character) {
+        if (playerInput.toUpperCase() === this.character.toUpperCase()) {
             this.guessed = true
         }
     }
