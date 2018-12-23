@@ -10,6 +10,7 @@ function Letter(character, guessed = false) {
     this.check = function(playerInput) {
         if (playerInput.toUpperCase() === this.character.toUpperCase()) {
             this.guessed = true
+            return true
         }
     }
 }

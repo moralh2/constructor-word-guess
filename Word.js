@@ -1,4 +1,5 @@
 var Letter = require("./Letter")
+var chalk = require("chalk")
 
 function Word(originalWord) {
     this.originalWord = originalWord
@@ -10,10 +11,20 @@ function Word(originalWord) {
         }
     }
     this.check = function(guessLetter) {
+        var guessedCorrectly = false
+        var playerGuess = chalk.bold(guessLetter.toUpperCase())
+        var message = ''
         for(var i = 0; i < this.letters.length; i++) {
             var currentLetter = this.letters[i]
-            currentLetter.check(guessLetter)
+            guessedCorrectly = currentLetter.check(guessLetter)
         }
+        if(guessedCorrectly) {
+            message = chalk.green("You entered: " + playerGuess + " ---- You guessed correctly!")
+        }
+        else {
+            message = chalk.red("You entered: " + playerGuess + " ---- That was not correct!")
+        }
+        console.log(message)
         this.print()
     }
     this.print = function() {

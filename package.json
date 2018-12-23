@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/moralh2/constructor-word-guess#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
     "inquirer": "^6.2.1"
   }
 }
