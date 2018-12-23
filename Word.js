@@ -8,7 +8,8 @@ function Word(originalWord) {
     this.createLetters = function() {
         var arrayString = this.originalWord.split('')
         for (var i = 0; i < arrayString.length; i++) {
-            this.letters.push( new Letter( arrayString[i] ) )
+            var isSpace = (arrayString[i] == ' ')
+            this.letters.push( new Letter( arrayString[i], isSpace) )
         }
     }
 
