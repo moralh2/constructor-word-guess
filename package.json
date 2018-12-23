@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/moralh2/constructor-word-guess/issues"
   },
-  "homepage": "https://github.com/moralh2/constructor-word-guess#readme"
+  "homepage": "https://github.com/moralh2/constructor-word-guess#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1"
+  }
 }
