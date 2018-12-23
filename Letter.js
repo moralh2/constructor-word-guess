@@ -1,9 +1,15 @@
-function Letter() {
-    //display underscore if not to be shown
-    // if you use toString then console log will call when outputting
-
-    // string for character
-    // bool if guessed
-    // func to display '_'
-    // takes char and upds bool
+function Letter(character, guessed = false) {
+    this.character = character
+    this.guessed = guessed
+    this.toString = function() {
+        if (this.guessed) {
+            return this.character.toUpperCase();
+        }
+        return '_'
+    }
+    this.check = function(playerInput) {
+        if (playerInput === this.character) {
+            this.guessed = true
+        }
+    }
 }
