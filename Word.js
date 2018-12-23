@@ -16,7 +16,8 @@ function Word(originalWord) {
         // check if any letters have been guessed (update Letter, returns true)
         for(var i = 0; i < this.letters.length; i++) {
             var currentLetter = this.letters[i]
-            guessedCorrectly = currentLetter.check(guessLetter)
+        // had to add the OR to ensure a true could not be overridden
+            guessedCorrectly = guessedCorrectly || currentLetter.check(guessLetter)
         }
 
         // variables for priting the outcome of this guess
