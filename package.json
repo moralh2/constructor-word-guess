@@ -1,0 +1,19 @@
+{
+  "name": "constructor-word-guess",
+  "version": "1.0.0",
+  "description": "word-guess game using js constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moralh2/constructor-word-guess.git"
+  },
+  "author": "h morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moralh2/constructor-word-guess/issues"
+  },
+  "homepage": "https://github.com/moralh2/constructor-word-guess#readme"
+}
